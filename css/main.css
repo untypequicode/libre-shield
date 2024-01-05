@@ -83,7 +83,7 @@ body {
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
-    font-weight: 400;
+    font-weight: 500;
     margin-left: 3.5rem;
     transition: .3s;
 }
@@ -91,8 +91,4 @@ body {
 .navbar a:hover,
 .navbar a.active {
     color: var(--second-text-color);
-}
-
-.navbar a.active {
-    font-weight: 500;
 }
