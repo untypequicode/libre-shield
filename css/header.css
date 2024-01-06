@@ -25,6 +25,8 @@
 
 .navbar {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .navbar a {
@@ -38,4 +40,14 @@
 .navbar a:hover,
 .navbar a.active {
     color: var(--second-text-color);
+}
+
+.navbar .switch-mode {
+    fill: var(--main-color);
+
+    width: 3.125rem;
+    height: 3.125rem;
+    margin-left: 3.5rem;
+
+    cursor: pointer;
 }
