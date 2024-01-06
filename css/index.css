@@ -1,4 +1,5 @@
 @import "main.css";
+@import "blob.css";
 
 .home-content {
     display: flex;
@@ -8,19 +9,14 @@
     gap: 12rem;
 }
 
-.home img,
-.home svg {
+.home img {
     flex: 1 0 0;
     align-self: stretch;
     width: auto;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 
-    border-radius: 10% 0 0 10% / 10% 0 0 10%;
-}
-
-.home svg {
-    background: url("../images/00013-4185248434.png") center/cover no-repeat;
+    animation: blob-1 40s infinite;
 }
 
 .home-text {
