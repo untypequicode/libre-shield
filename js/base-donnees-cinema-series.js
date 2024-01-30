@@ -122,28 +122,20 @@ document.addEventListener('DOMContentLoaded', () => {
 function genererTexte(contenu, classeAlternee) {
     let resume = `<section class="${contenu.classe} ${classeAlternee} ${contenu.type}" id="${contenu.id}"><div class="${contenu.contenuClasse}">`;
 
+    if(classeAlternee === 'gauche') {
+        resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
+    }
+    resume += `<div class="${contenu.texteClasse}">`;
+    resume += `<h1>${contenu.titre}</h1>`;
+    resume += `<p>${contenu.description}</p>`;
+    resume += `<div class="${contenu.liensClasse}">`;
+    contenu.liens.forEach(lien => {
+        resume += `<a class="${lien.classe}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
+    });
+    resume += `</div>`; // Ferme cine-links
+    resume += `</div>`; // Ferme cine-text
     if(classeAlternee === 'droite') {
-        resume += `<div class="${contenu.texteClasse}">`;
-        resume += `<h1>${contenu.titre}</h1>`;
-        resume += `<p>${contenu.description}</p>`;
-        resume += `<div class="${contenu.liensClasse}">`;
-        contenu.liens.forEach(lien => {
-            resume += `<a class="${lien.classe}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
-        });
-        resume += `</div>`; // Ferme cine-links
-        resume += `</div>`; // Ferme cine-text
         resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
-    } else {
-        resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
-        resume += `<div class="${contenu.texteClasse}">`;
-        resume += `<h1>${contenu.titre}</h1>`;
-        resume += `<p>${contenu.description}</p>`;
-        resume += `<div class="${contenu.liensClasse}">`;
-        contenu.liens.forEach(lien => {
-            resume += `<a class="${lien.classe}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
-        });
-        resume += `</div>`; // Ferme cine-links
-        resume += `</div>`; // Ferme cine-text
     }
 
 
