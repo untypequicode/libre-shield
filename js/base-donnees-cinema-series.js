@@ -50,15 +50,15 @@ const contenus = [
 document.addEventListener('DOMContentLoaded', () => {
     contenus.forEach((contenu, index) => {
         // Ajoute une classe basée sur l'index pair ou impair
-        const classeAlternée = index % 2 === 0 ? 'gauche' : 'droite';
-        document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, classeAlternée));
+        const classeAlternee = index % 2 === 0 ? 'gauche' : 'droite';
+        document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, classeAlternee));
     });
 });
 
-function genererTexte(contenu, classeAlternée) {
-    let resume = `<section class="${contenu.classe} ${classeAlternée}" id="${contenu.id}"><div class="${contenu.contenuClasse}">`;
+function genererTexte(contenu, classeAlternee) {
+    let resume = `<section class="${contenu.classe} ${classeAlternee}" id="${contenu.id}"><div class="${contenu.contenuClasse}">`;
 
-    if(classeAlternée === 'droite') {
+    if(classeAlternee === 'droite') {
         resume += `<div class="${contenu.texteClasse}">`;
         resume += `<h1>${contenu.titre}</h1>`;
         resume += `<p>${contenu.description}</p>`;
