@@ -1,0 +1,41 @@
+.filter-bar {
+    display: inline-flex;
+    padding: 0.675rem 1.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    border-radius: 6.25rem;
+    background: var(--bg-color);
+
+    /* Centrer horizontalement et verticalement */
+    position: fixed; /* ou 'fixed' si vous voulez qu'il reste au centre même lors du défilement */
+    top: 15rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.filter-option {
+    align-self: stretch;
+    /*margin-top: 2.5rem;*/
+    padding: 1.25rem 2.5rem;
+    text-align: center;
+
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 6.25rem;
+    transition: .3s;
+}
+
+.filter-option:hover {
+    background: var(--second-main-color);
+    color: var(--second-bg-color);
+}
+
+.filter-option.active {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
