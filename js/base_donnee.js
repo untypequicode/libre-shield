@@ -1,100 +1,92 @@
-function genererTexte(texteBrut) {
-    const content = texteBrut.split(';');
-    let resume = '';
-    resume += `<section class="${content[0]}" id="${content[1]}">`;
-    resume += `<div class="${content[2]}">`;
-    resume += `<img src="${content[3]}" alt="${content[4]}">`;
-    resume += `<div class="${content[5]}">`;
-    resume += `<h1>${content[6]}</h1>`;
-    resume += `<p>${content[7]}</p>`;
-    resume += `<div class="${content[8]}">`;
-    resume += `<a class="${content[9]}" href="${content[10]}" target="${content[11]}">${content[12]}</a>`;
-    resume += `<a class="${content[13]}" href="${content[14]}" target="${content[15]}">${content[16]}</a>`;
-    resume += '</div> </div> </div> </section>';
+const contenus = [
+    {
+        classe: "cine",
+        id: "dnedf",
+        contenuClasse: "cine-content",
+        imageSrc: "images/cinema-series/films/derriere-nos-ecrans-de-fumees-horizontal-0.jpg",
+        imageAlt: "illustration",
+        texteClasse: "cine-text",
+        titre: "Derriere nos écrans de fumées",
+        description: "À l'heure où les plateformes numériques deviennent essentielles pour rester en contact...",
+        liensClasse: "cine-links",
+        liens: [
+            { classe: "cine-link", href: "https://www.netflix.com/fr/title/81254224", target: "_blank", texte: "Voir sur Netflix" },
+            { classe: "cine-link", href: "https://www.imdb.com/title/tt11464826/", target: "_blank", texte: "Voir sur IMDB" }
+        ]
+    },
+    {
+        classe: "cine",
+        id: "tgh",
+        contenuClasse: "cine-content",
+        imageSrc: "images/cinema-series/films/the-great-hack-horizontal-0.jpg",
+        imageAlt: "illustration",
+        texteClasse: "cine-text",
+        titre: "The Great Hack",
+        description: "Le scandale de Cambridge Analytica est examiné à travers les rôles de plusieurs personnes affectées.",
+        liensClasse: "cine-links",
+        liens: [
+            { classe: "cine-link", href: "https://www.netflix.com/fr/title/80117542", target: "_blank", texte: "Voir sur Netflix" },
+            { classe: "cine-link", href: "https://www.imdb.com/title/tt9358204/", target: "_blank", texte: "Voir sur IMDB" }
+        ]
+    },
+    {
+        classe: "cine",
+        id: "tsn",
+        contenuClasse: "cine-content",
+        imageSrc: "images/cinema-series/films/the-social-network-horizontal-0.jpg",
+        imageAlt: "illustration",
+        texteClasse: "cine-text",
+        titre: "The Social Network",
+        description: "Mark Zuckerberg, étudiant à Harvard, crée le site de réseau social qui deviendra Facebook...",
+        liensClasse: "cine-links",
+        liens: [
+            { classe: "cine-link", href: "https://www.netflix.com/fr/title/70132721", target: "_blank", texte: "Voir sur Netflix" },
+            { classe: "cine-link", href: "https://www.imdb.com/title/tt1285016/", target: "_blank", texte: "Voir sur IMDB" }
+        ]
+    }
+];
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    contenus.forEach((contenu, index) => {
+        // Ajoute une classe basée sur l'index pair ou impair
+        const classeAlternée = index % 2 === 0 ? 'gauche' : 'droite';
+        document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, classeAlternée));
+    });
+});
+
+function genererTexte(contenu, classeAlternée) {
+    let resume = `<section class="${contenu.classe} ${classeAlternée}" id="${contenu.id}"><div class="${contenu.contenuClasse}">`;
+
+    if(classeAlternée === 'droite') {
+        resume += `<div class="${contenu.texteClasse}">`;
+        resume += `<h1>${contenu.titre}</h1>`;
+        resume += `<p>${contenu.description}</p>`;
+        resume += `<div class="${contenu.liensClasse}">`;
+        contenu.liens.forEach(lien => {
+            resume += `<a class="${lien.classe}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
+        });
+        resume += `</div>`; // Ferme cine-links
+        resume += `</div>`; // Ferme cine-text
+        resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
+    } else {
+        resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
+        resume += `<div class="${contenu.texteClasse}">`;
+        resume += `<h1>${contenu.titre}</h1>`;
+        resume += `<p>${contenu.description}</p>`;
+        resume += `<div class="${contenu.liensClasse}">`;
+        contenu.liens.forEach(lien => {
+            resume += `<a class="${lien.classe}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
+        });
+        resume += `</div>`; // Ferme cine-links
+        resume += `</div>`; // Ferme cine-text
+    }
+
+
+    resume += `</div></section>`; // Ferme cine-content et section
+
     return resume;
 }
 
-// Récupérer le corps du document
-var corpsDuDocument = document.body;
-
-// Création du texte brut
-let texteBrute;
 
 
-// Derriere nos écrans de fumées
-texteBrute = `cine;
-dnedf;
-cine-content;
-images/cinema-series/films/derriere-nos-ecrans-de-fumees-horizontal-0.jpg;
-illustration;
-cine-text;
-Derriere nos écrans de fumées;
-À l'heure où les plateformes numériques deviennent essentielles pour rester en contact, les experts révèlent comment elles sont en train de reprogrammer notre civilisation en montrant ce qui se cache derrière nos écrans.;
-cine-links;
-cine-link;
-https://www.netflix.com/fr/title/81254224;
-_blank;
-Voir sur Netflix;
-cine-link;
-https://www.imdb.com/title/tt11464826/;
-_blank;
-Voir sur IMDB
-`.trim();
-
-// Création du nouveau texte
-nouveauTexte = genererTexte(texteBrute);
-// Utiliser insertAdjacentHTML pour ajouter le texte à la fin du corps
-corpsDuDocument.insertAdjacentHTML('beforeend', nouveauTexte);
-
-
-//The Great Hack
-texteBrute = `cine;
-tgh;
-cine-content;
-images/cinema-series/films/the-great-hack-horizontal-0.jpg;
-illustration;
-cine-text;
-The Great Hack;
-Le scandale de Cambridge Analytica est examiné à travers les rôles de plusieurs personnes affectées.;
-cine-links;
-cine-link;
-https://www.netflix.com/fr/title/80117542;
-_blank;
-Voir sur Netflix;
-cine-link;
-https://www.imdb.com/title/tt9358204/;
-_blank;
-Voir sur IMDB
-`.trim();
-
-// Création du nouveau texte
-nouveauTexte = genererTexte(texteBrute);
-// Utiliser insertAdjacentHTML pour ajouter le texte à la fin du corps
-corpsDuDocument.insertAdjacentHTML('beforeend', nouveauTexte);
-
-// The social network
-texteBrute = `cine;
-tsn;
-cine-content;
-images/cinema-series/films/the-social-network-horizontal-0.jpg;
-illustration;
-cine-text;
-The social network;
-Mark Zuckerberg, étudiant à Harvard, crée le site de réseau social qui deviendra Facebook,
-il se retrouve poursuivi en justice par deux frères qui l'accusent d'avoir volé leur idée
-ainsi que par le co-fondateur de Facebook qui fut par la suite évincé de l'entreprise.;
-cine-links;
-cine-link;
-https://www.netflix.com/fr/title/70132721;
-_blank;
-Voir sur Netflix;
-cine-link;
-https://www.imdb.com/title/tt1285016/;
-_blank;
-Voir sur IMDB
-`.trim();
-
-// Création du nouveau texte
-nouveauTexte = genererTexte(texteBrute);
-// Utiliser insertAdjacentHTML pour ajouter le texte à la fin du corps
-corpsDuDocument.insertAdjacentHTML('beforeend', nouveauTexte);
