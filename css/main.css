@@ -21,6 +21,11 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    overflow-y: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 section {
@@ -31,4 +36,3 @@ section {
     justify-content: center;
     align-items: center;
 }
-
