@@ -80,6 +80,42 @@ const contenus = [
             { classe: "cine-link", href: "https://www.netflix.com/fr/title/70132721", target: "_blank", texte: "Voir sur Netflix" },
             { classe: "cine-link", href: "https://www.imdb.com/title/tt1285016/", target: "_blank", texte: "Voir sur IMDB" }
         ]
+    },
+    {
+        classe: "cine",
+        id: "t",
+        contenuClasse: "cine-content",
+        imageSrc: "https://www.techlore.tech/assets/henry.jpeg",
+        imageAlt: "illustration",
+        texteClasse: "cine-text",
+        titre: "Techlore",
+        type: "youtube",
+        date: "2012-02-13",
+        description: "Techlore - diffuser la confidentialité et la sécurité auprès du grand public." +
+            "Nous gérons plusieurs projets, communautés et contenus pour prouver que la confidentialité et la sécurité ne sont pas seulement réalisables, mais aussi simples et accessibles.",
+        liensClasse: "cine-links",
+        liens: [
+            { classe: "cine-link", href: "https://www.youtube.com/techlore", target: "_blank", texte: "Voir sur Youtube" },
+            { classe: "cine-link", href: "https://www.techlore.tech/", target: "_blank", texte: "Voir sur le site" }
+        ]
+    },
+    {
+        classe: "cine",
+        id: "tle",
+        contenuClasse: "cine-content",
+        imageSrc: "https://c10.patreonusercontent.com/4/patreon-media/p/campaign/2341552/4b18c8eb0c5743768ebceb3d334aa2a0/eyJoIjoxMDgwLCJ3IjoxMDgwfQ%3D%3D/3.jpg?token-time=1707955200&token-hash=ijHPYyD8do15IhxjoV9K3IsV0uOo6tDial0zeGvPxew%3D",
+        imageAlt: "illustration",
+        texteClasse: "cine-text",
+        titre: "The Linux Experiment",
+        type: "youtube",
+        date: "2018-02-21",
+        description: "Rendre Linux accessible : sans jargon technique, sans contenu ultra-technique." +
+            "Juste des actualités sur le bureau Linux, des tutoriels simples, des zooms sur des applications, et des articles d'opinion essayant de rester positifs, sans exclusion.",
+        liensClasse: "cine-links",
+        liens: [
+            { classe: "cine-link", href: "https://www.youtube.com/@TheLinuxEXP", target: "_blank", texte: "Voir sur Youtube" },
+            { classe: "cine-link", href: "https://www.patreon.com/thelinuxexperiment", target: "_blank", texte: "Voir sur Patreon" }
+        ]
     }
 ];
 
@@ -140,7 +176,5 @@ function genererTexte(contenu, classeAlternee) {
 
 
     resume += `</div></section>`; // Ferme cine-content et section
-
-    resume += '</div></section>';
     return resume;
 }
