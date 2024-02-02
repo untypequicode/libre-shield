@@ -1,0 +1,94 @@
+@import "main.css";
+@import "blob.css";
+
+.app-content {
+    display: flex;
+    height: 33.75rem;
+    justify-content: center;
+    align-items: center;
+    gap: 12rem;
+}
+
+
+.app-second-content {
+    display: flex;
+    height: 16.875rem;
+    justify-content: center;
+    align-items: center;
+    gap: 12rem;
+}
+
+.app img,
+.app-second img {
+    flex: 1 0 0;
+    align-self: stretch;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+
+    animation: blob-2 40s infinite;
+}
+
+.app-text,
+.app-second-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.675rem;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.app-text h1,
+.app-second-text h1 {
+    color: var(--text-color);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.app-text p,
+.app-second-text p {
+    align-self: stretch;
+
+    color: var(--second-text-color);
+    text-align: justify;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.app-links,
+.app-second-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.app-link,
+.app-second-link {
+    align-self: stretch;
+    margin-top: 2.5rem;
+    padding: 1.25rem 2.5rem;
+    text-align: center;
+
+    background: var(--second-bg-color);
+    color: var(--second-text-color);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 0.625rem;
+    transition: .3s;
+}
+
+.app-link:hover,
+.app-second-link:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
