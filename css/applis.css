@@ -10,7 +10,7 @@
 }
 
 
-.app-second-content {
+.second-app-content {
     display: flex;
     height: 16.875rem;
     justify-content: center;
@@ -18,27 +18,27 @@
     gap: 12rem;
 }
 
-.app-second {
+.second-app {
     min-height: 50vh;
 }
 
 .app img,
-.app-second img {
+.second-app img {
     flex: 1 0 0;
     align-self: stretch;
-    width: 100%;
+    width: auto;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 
-    animation: blob-2 40s infinite;
+    /*animation: blob-2 40s infinite;*/
 }
 
-/*.app-second img {*/
+/*.second-app img {*/
 /*    width: 50%;*/
 /*}*/
 
 .app-text,
-.app-second-text {
+.second-app-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,7 +49,7 @@
 }
 
 .app-text h1,
-.app-second-text h1 {
+.second-app-text h1 {
     color: var(--text-color);
     font-size: 3rem;
     font-style: normal;
@@ -58,7 +58,7 @@
 }
 
 .app-text p,
-.app-second-text p {
+.second-app-text p {
     align-self: stretch;
 
     color: var(--second-text-color);
@@ -70,7 +70,7 @@
 }
 
 .app-links,
-.app-second-links {
+.second-app-links {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +79,7 @@
 }
 
 .app-link,
-.app-second-link {
+.second-app-link {
     align-self: stretch;
     margin-top: 2.5rem;
     padding: 1.25rem 2.5rem;
@@ -96,7 +96,7 @@
 }
 
 .app-link:hover,
-.app-second-link:hover {
+.second-app-link:hover {
     background: var(--main-color);
     color: var(--bg-color);
 }
