@@ -93,6 +93,13 @@ const contenus = [
 ];
 
 function filterContent(type) {
+    const sections = document.querySelectorAll('.app');
+    sections.forEach(section => {
+        // Affiche seulement les sections qui correspondent au type sélectionné
+        section.style.display = section.classList.contains(type) ? '' : 'none';
+    });
+
+    // Mise à jour de l'état actif des boutons
     const buttons = document.querySelectorAll('.filter-option');
     buttons.forEach(button => {
         if(button.id === 'show-' + type) {
@@ -104,7 +111,19 @@ function filterContent(type) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Ajout des gestionnaires d'événements pour les boutons de filtrage
+    // Tri des contenus du plus récent au plus vieux
+    contenus.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    contenus.forEach((contenu, index) => {
+        // Ajoute une classe basée sur l'index pair ou impair
+        const classeAlternee = index % 2 === 0 ? 'gauche' : 'droite';
+        document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, "", classeAlternee));
+    });
+
+    // Initialisation avec le filtre 'alternative'
+    filterContent('alternative');
+
+    // Gestionnaires d'événements pour les boutons
     document.getElementById('show-origine').addEventListener('click', () => filterContent('origine'));
     document.getElementById('show-alternative').addEventListener('click', () => filterContent('alternative'));
 });
