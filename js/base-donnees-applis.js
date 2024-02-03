@@ -91,3 +91,20 @@ const contenus = [
         apps: [ "gdrive" ]
     }
 ];
+
+function filterContent(type) {
+    const buttons = document.querySelectorAll('.filter-option');
+    buttons.forEach(button => {
+        if(button.id === 'show-' + type) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Ajout des gestionnaires d'événements pour les boutons de filtrage
+    document.getElementById('show-origine').addEventListener('click', () => filterContent('origine'));
+    document.getElementById('show-alternative').addEventListener('click', () => filterContent('alternative'));
+});
