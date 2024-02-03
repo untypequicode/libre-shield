@@ -100,12 +100,15 @@ function filterContent(type) {
     });
 
     // Mise à jour de l'état actif des boutons
+    updateActiveButton(type);
+}
+
+function updateActiveButton(type) {
     const buttons = document.querySelectorAll('.filter-option');
     buttons.forEach(button => {
-        if(button.id === 'show-' + type) {
+        button.classList.remove('active');
+        if (button.id === 'show-' + type) {
             button.classList.add('active');
-        } else {
-            button.classList.remove('active');
         }
     });
 }
