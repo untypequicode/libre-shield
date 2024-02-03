@@ -119,7 +119,6 @@ const contenus = [
     }
 ];
 
-
 function filterContent(type) {
     const sections = document.querySelectorAll('.cine');
     sections.forEach(section => {
@@ -135,8 +134,6 @@ function filterContent(type) {
         }
     });
 }
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     // Tri des contenus du plus récent au plus vieux
@@ -173,7 +170,6 @@ function genererTexte(contenu, classeAlternee) {
     if(classeAlternee === 'droite') {
         resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
     }
-
 
     resume += `</div></section>`; // Ferme cine-content et section
     return resume;
