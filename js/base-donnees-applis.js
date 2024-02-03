@@ -108,3 +108,26 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('show-origine').addEventListener('click', () => filterContent('origine'));
     document.getElementById('show-alternative').addEventListener('click', () => filterContent('alternative'));
 });
+
+function genererTexte(contenu, prefixeClasse, classeAlternee) {
+    let resume = `<section class="${prefixeClasse}${contenu.classe} ${classeAlternee} ${contenu.type}" id="${contenu.id}"><div class="${prefixeClasse}${contenu.contenuClasse}">`;
+
+    if(classeAlternee === 'gauche') {
+        resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
+    }
+    resume += `<div class="${prefixeClasse}${contenu.texteClasse}">`;
+    resume += `<h1>${contenu.titre}</h1>`;
+    resume += `<p>${contenu.description}</p>`;
+    resume += `<div class="${prefixeClasse}${contenu.liensClasse}">`;
+    contenu.liens.forEach(lien => {
+        resume += `<a class="${prefixeClasse}${lien.classe}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
+    });
+    resume += `</div>`; // Ferme app-links
+    resume += `</div>`; // Ferme app-text
+    if(classeAlternee === 'droite') {
+        resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
+    }
+
+    resume += `</div></section>`; // Ferme app-content et section
+    return resume;
+}

@@ -174,7 +174,6 @@ function genererTexte(contenu, classeAlternee) {
         resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
     }
 
-
     resume += `</div></section>`; // Ferme cine-content et section
     return resume;
 }
