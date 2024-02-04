@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function genererTexte(contenu, prefixeClasse, classeAlternee) {
     // Début de la construction du HTML avec les classes dynamiques et l'ID de l'élément
-    let resume = `<section class="${prefixeClasse}${contenu.classe} ${classeAlternee} ${contenu.type}" id="${contenu.id}"><div class="${prefixeClasse}${contenu.contenuClasse}">`;
+    let resume = `<section class="${prefixeClasse}${contenu.classe} ${contenu.type}" id="${contenu.id}"><div class="${prefixeClasse}${contenu.contenuClasse}">`;
 
     // Condition pour ajouter l'image à gauche si classeAlternee est 'left'
     if(classeAlternee === 'left') {
