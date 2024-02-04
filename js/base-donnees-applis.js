@@ -26,8 +26,8 @@ const contenus = [
         titre: "Signal",
         type: "alternative",
         date: "2018-01-10",
-        description: "Dites « Bonjour » à une expérience de messagerie différente." +
-            "Un accent inattendu sur la confidentialité et la protection des données personnelles," +
+        description: "Dites « Bonjour » à une expérience de messagerie différente. " +
+            "Un accent inattendu sur la confidentialité et la protection des données personnelles, " +
             "combiné à toutes les fonctions auxquelles vous vous attendez.",
         liensClasse: "app-links",
         liens: [
@@ -45,7 +45,7 @@ const contenus = [
         titre: "Google Drive",
         type: "origine",
         date: "2009-02-00",
-        description: "Stockez vos fichiers et dossiers, partagez-les avec vos collaborateurs," +
+        description: "Stockez vos fichiers et dossiers, partagez-les avec vos collaborateurs, " +
             "et travaillez dessus depuis votre appareil mobile, tablette ou ordinateur",
         liensClasse: "app-links",
         liens: [
