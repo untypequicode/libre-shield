@@ -100,12 +100,8 @@ const contenus = [
  */
 function filterContent(type) {
     // Supprime tous les éléments avec la classe '.app' pour nettoyer l'affichage précédent.
-    document.querySelectorAll('.app').forEach(function(element) {
-        element.remove();
-    });
-    document.querySelectorAll('.second-app').forEach(function(element) {
-        element.remove();
-    });
+    document.querySelectorAll('.app, .second-app').forEach(element => element.remove());
+
 
     // Filtre le contenu par type et le trie par date du plus récent au plus ancien.
     const contenu1 = contenus.filter(contenu => contenu.type === type)

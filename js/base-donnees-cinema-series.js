@@ -119,33 +119,34 @@ const contenus = [
     }
 ];
 
+
 function filterContent(type) {
-    const sections = document.querySelectorAll('.cine');
-    sections.forEach(section => {
-        section.style.display = section.classList.contains(type) || type === 'all' ? '' : 'none';
+    // Supprime tous les éléments avec la classe '.cine' pour nettoyer l'affichage précédent.
+    document.querySelectorAll('.cine').forEach(element => element.remove());
+
+    // Filtre le contenu par type (ou sélectionne tout si type="all") et le trie par date du plus récent au plus ancien.
+    const contenu1 = contenus.filter(contenu => type === "all" || contenu.type === type)
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    // Met à jour l'état actif des boutons de filtre basé sur le type sélectionné.
+    document.querySelectorAll('.filter-option').forEach(button => {
+        button.classList.toggle('active', type === "all" ? button.id === 'show-all' : button.id === 'show-' + type);
     });
 
-    const buttons = document.querySelectorAll('.filter-option');
-    buttons.forEach(button => {
-        if(button.id === 'show-' + type) {
-            button.classList.add('active');
-        } else {
-            button.classList.remove('active');
-        }
+    // Affiche le contenu filtré et trié dans le document, alternant la classe pour chaque élément.
+    let i = 0;
+    contenu1.forEach(contenu => {
+        const classeAlternee = i % 2 === 0 ? 'left' : 'right';
+        document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, "", classeAlternee));
+
+        i++;
     });
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Tri des contenus du plus récent au plus vieux
-    contenus.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    contenus.forEach((contenu, index) => {
-        // Ajoute une classe basée sur l'index pair ou impair
-        const classeAlternee = index % 2 === 0 ? 'gauche' : 'droite';
-        document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, classeAlternee));
-    });
-
-    console.log("Hello world !");
+    // Filtre initial pour afficher les éléments de type 'all'.
+    filterContent('all');
 
     // Ajout des gestionnaires d'événements pour les boutons de filtrage
     document.getElementById('show-all').addEventListener('click', () => filterContent('all'));
@@ -154,25 +155,39 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('show-youtube').addEventListener('click', () => filterContent('youtube'));
 });
 
-function genererTexte(contenu, classeAlternee) {
-    let resume = `<section class="${contenu.classe} ${classeAlternee} ${contenu.type}" id="${contenu.id}"><div class="${contenu.contenuClasse}">`;
+/**
+ * Génère le HTML pour un élément de contenu avec des classes spécifiques.
+ *
+ * @param {Object} contenu - L'objet contenant les informations de l'élément à afficher.
+ * @param {String} prefixeClasse - Préfixe à ajouter aux classes de l'élément pour une personnalisation CSS.
+ * @param {String} classeAlternee - Détermine la position de l'image ('left' ou 'right') pour alterner l'affichage.
+ * @return {String} Le HTML généré pour l'élément de contenu.
+ */
+function genererTexte(contenu, prefixeClasse, classeAlternee) {
+    // Début de la construction du HTML avec les classes dynamiques et l'ID de l'élément
+    let resume = `<section class="${prefixeClasse}${contenu.classe} ${classeAlternee} ${contenu.type}" id="${contenu.id}"><div class="${prefixeClasse}${contenu.contenuClasse}">`;
 
-    if(classeAlternee === 'gauche') {
+    // Condition pour ajouter l'image à gauche si classeAlternee est 'left'
+    if(classeAlternee === 'left') {
         resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
     }
-    resume += `<div class="${contenu.texteClasse}">`;
+
+    // Ajout du titre, de la description et des liens
+    resume += `<div class="${prefixeClasse}${contenu.texteClasse}">`;
     resume += `<h1>${contenu.titre}</h1>`;
     resume += `<p>${contenu.description}</p>`;
-    resume += `<div class="${contenu.liensClasse}">`;
+    resume += `<div class="${prefixeClasse}${contenu.liensClasse}">`;
     contenu.liens.forEach(lien => {
-        resume += `<a class="${lien.classe}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
+        resume += `<a class="${prefixeClasse}${lien.classe}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
     });
-    resume += `</div>`; // Ferme cine-links
-    resume += `</div>`; // Ferme cine-text
-    if(classeAlternee === 'droite') {
+    resume += `</div></div>`; // Fermeture des divs de texte et de liens
+
+    // Condition pour ajouter l'image à droite si classeAlternee est 'right'
+    if(classeAlternee === 'right') {
         resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
     }
 
-    resume += `</div></section>`; // Ferme cine-content et section
+    // Fermeture des balises de contenu et de section, puis retour du HTML généré
+    resume += `</div></section>`;
     return resume;
 }
