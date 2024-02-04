@@ -26,8 +26,8 @@ const contenus = [
         titre: "Signal",
         type: "alternative",
         date: "2018-01-10",
-        description: "Dites « Bonjour » à une expérience de messagerie différente." +
-            "Un accent inattendu sur la confidentialité et la protection des données personnelles," +
+        description: "Dites « Bonjour » à une expérience de messagerie différente. " +
+            "Un accent inattendu sur la confidentialité et la protection des données personnelles, " +
             "combiné à toutes les fonctions auxquelles vous vous attendez.",
         liensClasse: "app-links",
         liens: [
@@ -44,8 +44,8 @@ const contenus = [
         texteClasse: "app-text",
         titre: "Google Drive",
         type: "origine",
-        date: "2009-02-00",
-        description: "Stockez vos fichiers et dossiers, partagez-les avec vos collaborateurs," +
+        date: "2012-05-24",
+        description: "Stockez vos fichiers et dossiers, partagez-les avec vos collaborateurs, " +
             "et travaillez dessus depuis votre appareil mobile, tablette ou ordinateur",
         liensClasse: "app-links",
         liens: [
@@ -62,7 +62,7 @@ const contenus = [
         texteClasse: "app-text",
         titre: "MEGA",
         type: "alternative",
-        date: "2009-02-00",
+        date: "2013-01-19",
         description: "La protection des données personnelles et la confidentialité " +
             "ne sont pas des options avec MEGA, c’est la norme. " +
             "Nous croyons en effet que tout le monde devrait pouvoir stocker des données et " +
@@ -93,13 +93,17 @@ const contenus = [
 ];
 
 function filterContent(type) {
-    const sections = document.querySelectorAll('.app');
-    sections.forEach(section => {
-        // Affiche seulement les sections qui correspondent au type sélectionné
-        section.style.display = section.classList.contains(type) ? '' : 'none';
+    document.querySelectorAll('.app').forEach(function(element) {
+        element.remove();
     });
 
-    // Mise à jour de l'état actif des boutons
+    const contenu1 = contenus.filter(contenu => contenu.type === type);
+
+    // Tri de contenu1 par date du plus récent au plus ancien
+    contenu1.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+
+    // Mise à jour des boutons actifs
     const buttons = document.querySelectorAll('.filter-option');
     buttons.forEach(button => {
         if(button.id === 'show-' + type) {
@@ -108,25 +112,22 @@ function filterContent(type) {
             button.classList.remove('active');
         }
     });
+
+    let i = 0;
+    contenu1.forEach(contenu => {
+        const classeAlternee = i % 2 === 0 ? 'gauche' : 'droite';
+        document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, "", classeAlternee));
+        i++;
+    });
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Tri des contenus du plus récent au plus vieux
-    contenus.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    contenus.forEach((contenu, index) => {
-        // Ajoute une classe basée sur l'index pair ou impair
-        const classeAlternee = index % 2 === 0 ? 'gauche' : 'droite';
-        document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, "", classeAlternee));
-    });
-
-    // Initialisation avec le filtre 'alternative'
-    filterContent('alternative');
-
-    // Gestionnaires d'événements pour les boutons
-    document.getElementById('show-origine').addEventListener('click', () => filterContent('origine'));
+    filterContent('alternative')
     document.getElementById('show-alternative').addEventListener('click', () => filterContent('alternative'));
+    document.getElementById('show-origine').addEventListener('click', () => filterContent('origine'));
 });
+
 
 function genererTexte(contenu, prefixeClasse, classeAlternee) {
     let resume = `<section class="${prefixeClasse}${contenu.classe} ${classeAlternee} ${contenu.type}" id="${contenu.id}"><div class="${prefixeClasse}${contenu.contenuClasse}">`;
