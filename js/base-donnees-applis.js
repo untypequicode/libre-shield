@@ -92,27 +92,28 @@ const contenus = [
     }
 ];
 
+/**
+ * Filtre et affiche le contenu basé sur le type spécifié, en supprimant d'abord tout contenu précédent.
+ * Ensuite, il trie le contenu filtré par date du plus récent au plus ancien et met à jour l'affichage.
+ *
+ * @param {String} type - Le type de contenu à filtrer ('origine' ou 'alternative').
+ */
 function filterContent(type) {
+    // Supprime tous les éléments avec la classe '.app' pour nettoyer l'affichage précédent.
     document.querySelectorAll('.app').forEach(function(element) {
         element.remove();
     });
 
-    const contenu1 = contenus.filter(contenu => contenu.type === type);
+    // Filtre le contenu par type et le trie par date du plus récent au plus ancien.
+    const contenu1 = contenus.filter(contenu => contenu.type === type)
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    // Tri de contenu1 par date du plus récent au plus ancien
-    contenu1.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-
-    // Mise à jour des boutons actifs
-    const buttons = document.querySelectorAll('.filter-option');
-    buttons.forEach(button => {
-        if(button.id === 'show-' + type) {
-            button.classList.add('active');
-        } else {
-            button.classList.remove('active');
-        }
+    // Met à jour l'état actif des boutons de filtre basé sur le type sélectionné.
+    document.querySelectorAll('.filter-option').forEach(button => {
+        button.classList.toggle('active', button.id === 'show-' + type);
     });
 
+    // Affiche le contenu filtré et trié dans le document, alternant la classe pour chaque élément.
     let i = 0;
     contenu1.forEach(contenu => {
         const classeAlternee = i % 2 === 0 ? 'left' : 'right';
@@ -122,19 +123,40 @@ function filterContent(type) {
 }
 
 
+
+// Attente que le document soit entièrement chargé pour assurer que tous les éléments sont accessibles.
 document.addEventListener('DOMContentLoaded', () => {
-    filterContent('alternative')
+    // Filtre initial pour afficher les éléments de type 'alternative'.
+    filterContent('alternative');
+
+    // Attache un gestionnaire d'événement au clic sur l'élément avec l'ID 'show-alternative'.
+    // Cela déclenche la fonction filterContent pour afficher les éléments de type 'alternative'.
     document.getElementById('show-alternative').addEventListener('click', () => filterContent('alternative'));
+
+    // Attache un gestionnaire d'événement au clic sur l'élément avec l'ID 'show-origine'.
+    // Cela déclenche la fonction filterContent pour afficher les éléments de type 'origine'.
     document.getElementById('show-origine').addEventListener('click', () => filterContent('origine'));
 });
 
 
+/**
+ * Génère le HTML pour un élément de contenu avec des classes spécifiques.
+ *
+ * @param {Object} contenu - L'objet contenant les informations de l'élément à afficher.
+ * @param {String} prefixeClasse - Préfixe à ajouter aux classes de l'élément pour une personnalisation CSS.
+ * @param {String} classeAlternee - Détermine la position de l'image ('left' ou 'right') pour alterner l'affichage.
+ * @return {String} Le HTML généré pour l'élément de contenu.
+ */
 function genererTexte(contenu, prefixeClasse, classeAlternee) {
+    // Début de la construction du HTML avec les classes dynamiques et l'ID de l'élément
     let resume = `<section class="${prefixeClasse}${contenu.classe} ${classeAlternee} ${contenu.type}" id="${contenu.id}"><div class="${prefixeClasse}${contenu.contenuClasse}">`;
 
+    // Condition pour ajouter l'image à gauche si classeAlternee est 'left'
     if(classeAlternee === 'left') {
         resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
     }
+
+    // Ajout du titre, de la description et des liens
     resume += `<div class="${prefixeClasse}${contenu.texteClasse}">`;
     resume += `<h1>${contenu.titre}</h1>`;
     resume += `<p>${contenu.description}</p>`;
@@ -142,12 +164,14 @@ function genererTexte(contenu, prefixeClasse, classeAlternee) {
     contenu.liens.forEach(lien => {
         resume += `<a class="${prefixeClasse}${lien.classe}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
     });
-    resume += `</div>`; // Ferme app-links
-    resume += `</div>`; // Ferme app-text
+    resume += `</div></div>`; // Fermeture des divs de texte et de liens
+
+    // Condition pour ajouter l'image à droite si classeAlternee est 'right'
     if(classeAlternee === 'right') {
         resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
     }
 
-    resume += `</div></section>`; // Ferme app-content et section
+    // Fermeture des balises de contenu et de section, puis retour du HTML généré
+    resume += `</div></section>`;
     return resume;
 }
