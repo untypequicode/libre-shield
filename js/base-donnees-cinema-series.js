@@ -137,7 +137,8 @@ function filterContent(type) {
     let i = 0;
     contenu1.forEach(contenu => {
         const classeAlternee = i % 2 === 0 ? 'left' : 'right';
-        document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, "", classeAlternee));
+        const styleAlterne = i % 2 === 0 ? '' : 'second';
+        document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, "", styleAlterne, classeAlternee));
 
         i++;
     });
@@ -163,9 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
  * @param {String} classeAlternee - Détermine la position de l'image ('left' ou 'right') pour alterner l'affichage.
  * @return {String} Le HTML généré pour l'élément de contenu.
  */
-function genererTexte(contenu, prefixeClasse, classeAlternee) {
+function genererTexte(contenu, prefixeClasse, styleClasse, classeAlternee) {
     // Début de la construction du HTML avec les classes dynamiques et l'ID de l'élément
-    let resume = `<section class="${prefixeClasse}${contenu.classe} ${contenu.type}" id="${contenu.id}"><div class="${prefixeClasse}${contenu.contenuClasse}">`;
+    let resume = `<section class="${prefixeClasse}${contenu.classe} ${styleClasse} ${contenu.type}" id="${contenu.id}"><div class="${prefixeClasse}${contenu.contenuClasse}">`;
 
     // Condition pour ajouter l'image à gauche si classeAlternee est 'left'
     if(classeAlternee === 'left') {
@@ -173,12 +174,12 @@ function genererTexte(contenu, prefixeClasse, classeAlternee) {
     }
 
     // Ajout du titre, de la description et des liens
-    resume += `<div class="${prefixeClasse}${contenu.texteClasse}">`;
+    resume += `<div class="${prefixeClasse}${contenu.texteClasse} ${styleClasse}">`;
     resume += `<h1>${contenu.titre}</h1>`;
     resume += `<p>${contenu.description}</p>`;
-    resume += `<div class="${prefixeClasse}${contenu.liensClasse}">`;
+    resume += `<div class="${prefixeClasse}${contenu.liensClasse} ${styleClasse}">`;
     contenu.liens.forEach(lien => {
-        resume += `<a class="${prefixeClasse}${lien.classe}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
+        resume += `<a class="${prefixeClasse}${lien.classe} ${styleClasse}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
     });
     resume += `</div></div>`; // Fermeture des divs de texte et de liens
 

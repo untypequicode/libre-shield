@@ -37,6 +37,10 @@
     line-height: normal;
 }
 
+.cine-text.second h1 {
+    color: var(--second-text-color);
+}
+
 .cine-text p {
     align-self: stretch;
 
@@ -46,6 +50,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.cine-text.second p {
+    color: var(--text-color);
 }
 
 .cine-links {
@@ -72,7 +80,17 @@
     transition: .3s;
 }
 
+.cine-link.second {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
 .cine-link:hover {
     background: var(--main-color);
     color: var(--bg-color);
+}
+
+.cine-link.second:hover {
+    background: var(--second-main-color);
+    color: var(--second-bg-color);
 }
