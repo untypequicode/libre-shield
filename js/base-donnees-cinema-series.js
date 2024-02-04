@@ -145,6 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, classeAlternee));
     });
 
+    console.log("Hello world !");
+
     // Ajout des gestionnaires d'événements pour les boutons de filtrage
     document.getElementById('show-all').addEventListener('click', () => filterContent('all'));
     document.getElementById('show-film').addEventListener('click', () => filterContent('film'));
