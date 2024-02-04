@@ -115,7 +115,7 @@ function filterContent(type) {
 
     let i = 0;
     contenu1.forEach(contenu => {
-        const classeAlternee = i % 2 === 0 ? 'gauche' : 'droite';
+        const classeAlternee = i % 2 === 0 ? 'left' : 'right';
         document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, "", classeAlternee));
         i++;
     });
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function genererTexte(contenu, prefixeClasse, classeAlternee) {
     let resume = `<section class="${prefixeClasse}${contenu.classe} ${classeAlternee} ${contenu.type}" id="${contenu.id}"><div class="${prefixeClasse}${contenu.contenuClasse}">`;
 
-    if(classeAlternee === 'gauche') {
+    if(classeAlternee === 'left') {
         resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
     }
     resume += `<div class="${prefixeClasse}${contenu.texteClasse}">`;
@@ -144,7 +144,7 @@ function genererTexte(contenu, prefixeClasse, classeAlternee) {
     });
     resume += `</div>`; // Ferme app-links
     resume += `</div>`; // Ferme app-text
-    if(classeAlternee === 'droite') {
+    if(classeAlternee === 'right') {
         resume += `<img src="${contenu.imageSrc}" alt="${contenu.imageAlt}">`;
     }
 
