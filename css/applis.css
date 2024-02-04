@@ -57,6 +57,11 @@
     line-height: normal;
 }
 
+.app-text.second h1,
+.second-app-text.second h1 {
+    color: var(--second-text-color);
+}
+
 .app-text p,
 .second-app-text p {
     align-self: stretch;
@@ -67,6 +72,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.app-text.second p,
+.second-app-text.second p {
+    color: var(--text-color);
 }
 
 .app-links,
@@ -95,8 +105,20 @@
     transition: .3s;
 }
 
+.app-link.second,
+.second-app-link.second {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
 .app-link:hover,
 .second-app-link:hover {
     background: var(--main-color);
     color: var(--bg-color);
+}
+
+.app-link.second:hover,
+.second-app-link.second:hover {
+    background: var(--second-main-color);
+    color: var(--second-bg-color);
 }
