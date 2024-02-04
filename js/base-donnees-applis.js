@@ -103,6 +103,9 @@ function filterContent(type) {
     document.querySelectorAll('.app').forEach(function(element) {
         element.remove();
     });
+    document.querySelectorAll('.second-app').forEach(function(element) {
+        element.remove();
+    });
 
     // Filtre le contenu par type et le trie par date du plus récent au plus ancien.
     const contenu1 = contenus.filter(contenu => contenu.type === type)
@@ -119,8 +122,12 @@ function filterContent(type) {
         const classeAlternee = i % 2 === 0 ? 'left' : 'right';
         document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, "", classeAlternee));
 
-        contenu.apps.forEach(app => {
+        i++;
 
+        contenu.apps.forEach(app => {
+            const contenu2 = contenus.find(contenu => contenu.id === app);
+            const classeAlternee = i % 2 === 0 ? 'left' : 'right';
+            document.body.insertAdjacentHTML('beforeend', genererTexte(contenu2, "second-", classeAlternee));
 
             i++;
         });
