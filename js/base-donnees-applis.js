@@ -118,7 +118,12 @@ function filterContent(type) {
     contenu1.forEach(contenu => {
         const classeAlternee = i % 2 === 0 ? 'left' : 'right';
         document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, "", classeAlternee));
-        i++;
+
+        contenu.apps.forEach(app => {
+
+
+            i++;
+        });
     });
 }
 
