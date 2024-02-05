@@ -1,18 +1,3 @@
-// Attente que le document soit entièrement chargé pour assurer que tous les éléments sont accessibles.
-document.addEventListener('DOMContentLoaded', () => {
-    // Filtre initial pour afficher les éléments de type 'alternative'.
-    filterContent('alternative');
-
-    // Attache un gestionnaire d'événement au clic sur l'élément avec l'ID 'show-alternative'.
-    // Cela déclenche la fonction filterContent pour afficher les éléments de type 'alternative'.
-    document.getElementById('show-alternative').addEventListener('click', () => filterContent('alternative'));
-
-    // Attache un gestionnaire d'événement au clic sur l'élément avec l'ID 'show-origine'.
-    // Cela déclenche la fonction filterContent pour afficher les éléments de type 'origine'.
-    document.getElementById('show-origine').addEventListener('click', () => filterContent('origine'));
-});
-
-
 /**
  * Génère le HTML pour un élément de contenu avec des classes spécifiques.
  *
