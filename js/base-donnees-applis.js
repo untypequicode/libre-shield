@@ -114,17 +114,18 @@ function filterContent(type) {
 
     // Affiche le contenu filtré et trié dans le document, alternant la classe pour chaque élément.
     let i = 0;
+    let j = 0;
     contenu1.forEach(contenu => {
         const classeAlternee = i % 2 === 0 ? 'left' : 'right';
-        const styleAlterne = i % 2 === 0 ? '' : 'second';
+        const styleAlterne = j % 2 === 0 ? '' : 'second';
         document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, "", styleAlterne, classeAlternee));
 
         i++;
+        j++;
 
         contenu.apps.forEach(app => {
             const contenu2 = contenus.find(contenu => contenu.id === app);
             const classeAlternee = i % 2 === 0 ? 'left' : 'right';
-            const styleAlterne = i % 2 === 0 ? '' : 'second';
             document.body.insertAdjacentHTML('beforeend', genererTexte(contenu2, "second-", styleAlterne, classeAlternee));
 
             i++;
