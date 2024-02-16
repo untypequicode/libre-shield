@@ -14,7 +14,8 @@ const contenus = [
         liens: [
             { classe: "app-link", href: "https://www.whatsapp.com/", target: "_blank", texte: "Site officiel" }
         ],
-        apps: [ "signal" ]
+        apps: [ "signal" ],
+        utilisateurs: 2000000000 // Nombre d'utilisateurs en millions
     },
     {
         classe: "app",
@@ -33,7 +34,8 @@ const contenus = [
         liens: [
             { classe: "app-link", href: "https://www.signal.org/", target: "_blank", texte: "Site officiel" }
         ],
-        apps: [ "whatsapp" ]
+        apps: [ "whatsapp" ],
+        utilisateurs: 4000000 // Nombre d'utilisateurs
     },
     {
         classe: "app",
@@ -51,7 +53,8 @@ const contenus = [
         liens: [
             { classe: "app-link", href: "https://www.whatsapp.com/", target: "_blank", texte: "Site officiel" }
         ],
-        apps: [ "mega", "kdrive" ]
+        apps: [ "mega", "kdrive" ],
+        utilisateurs: 1000000000 // Nombre d'utilisateurs en millions
     },
     {
         classe: "app",
@@ -71,7 +74,8 @@ const contenus = [
         liens: [
             { classe: "app-link", href: "https://www.whatsapp.com/", target: "_blank", texte: "Site officiel" }
         ],
-        apps: [ "gdrive" ]
+        apps: [ "gdrive" ],
+        utilisateurs: 250000000 // Nombre d'utilisateurs en millions
     },
     {
         classe: "app",
@@ -88,6 +92,7 @@ const contenus = [
         liens: [
             { classe: "app-link", href: "https://www.whatsapp.com/", target: "_blank", texte: "Site officiel" }
         ],
-        apps: [ "gdrive" ]
+        apps: [ "gdrive" ],
+        utilisateurs: 0 // Nombre d'utilisateurs (inconnu)
     }
 ];
