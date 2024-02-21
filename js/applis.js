@@ -280,5 +280,78 @@ const contenus = [
         ],
         apps: [ "windows" ],
         utilisateurs: 40000000 // Nombre d'utilisateurs
+    },
+    {
+        classe: "app",
+        id: "photoshop",
+        contenuClasse: "app-content",
+        imageSrc: "images/apps/photoshop.svg",
+        imageAlt: "illustration",
+        texteClasse: "app-text",
+        titre: "Adobe Photoshop",
+        type: "origine",
+        date: "1988-02-19",
+        description: "Le logiciel de retouche photo le plus avancé au monde.",
+        liensClasse: "app-links",
+        liens: [
+            { classe: "app-link", href: "https://www.adobe.com/fr/products/photoshop.html", target: "_blank", texte: "Site officiel" }
+        ],
+        apps: [ "gimp" ],
+        utilisateurs: 10000000 // Nombre d'utilisateurs
+    },
+    {
+        classe: "app",
+        id: "gimp",
+        contenuClasse: "app-content",
+        imageSrc: "images/apps/gimp.svg",
+        imageAlt: "illustration",
+        texteClasse: "app-text",
+        titre: "GIMP",
+        type: "alternative",
+        date: "1995-11-21",
+        description: "GIMP est un programme de création graphique et de retouche photo très puissant. " +
+            "Il comporte l'ensemble des outils nécessaires à la création de dessins ainsi qu'à la retouche d'images.",
+        liensClasse: "app-links",
+        liens: [
+            { classe: "app-link", href: "https://www.gimp.org/", target: "_blank", texte: "Site officiel" }
+        ],
+        apps: [ "photoshop" ],
+        utilisateurs: 1000000 // Nombre d'utilisateurs
+    },
+    {
+        classe: "app",
+        id: "vscode",
+        contenuClasse: "app-content",
+        imageSrc: "images/apps/vscode.svg",
+        imageAlt: "illustration",
+        texteClasse: "app-text",
+        titre: "Visual Studio Code",
+        type: "origine",
+        date: "2015-04-29",
+        description: "Visual Studio Code est un éditeur de code source léger mais puissant qui s'exécute sur votre bureau et est disponible pour Windows, macOS et Linux.",
+        liensClasse: "app-links",
+        liens: [
+            { classe: "app-link", href: "https://code.visualstudio.com/", target: "_blank", texte: "Site officiel" }
+        ],
+        apps: [ "vscodium" ],
+        utilisateurs: 15000000 // Nombre d'utilisateurs
+    },
+    {
+        classe: "app",
+        id: "vscodium",
+        contenuClasse: "app-content",
+        imageSrc: "images/apps/vscodium.svg",
+        imageAlt: "illustration",
+        texteClasse: "app-text",
+        titre: "VSCodium",
+        type: "alternative",
+        date: "2019-04-18",
+        description: "VSCodium est un fork de Visual Studio Code qui respecte la vie privée des utilisateurs.",
+        liensClasse: "app-links",
+        liens: [
+            { classe: "app-link", href: "https://vscodium.com/", target: "_blank", texte: "Site officiel" }
+        ],
+        apps: [ "vscode" ],
+        utilisateurs: 1000000 // Nombre d'utilisateurs
     }
 ];
