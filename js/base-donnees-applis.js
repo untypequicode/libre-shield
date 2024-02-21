@@ -41,7 +41,7 @@ function filterContent(type) {
 // Attente que le document soit entièrement chargé pour assurer que tous les éléments sont accessibles.
 document.addEventListener('DOMContentLoaded', () => {
     // Filtre initial pour afficher les éléments de type 'alternative'.
-    filterContent('alternative');
+    filterContent('origine');
 
     // Attache un gestionnaire d'événement au clic sur l'élément avec l'ID 'show-alternative'.
     // Cela déclenche la fonction filterContent pour afficher les éléments de type 'alternative'.
