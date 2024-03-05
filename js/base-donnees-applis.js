@@ -17,9 +17,9 @@ function genereContent() {
 
     // Générer le contenu HTML pour chaque catégorie triée
     nbAppsByCategory.forEach(category => {
-        const second = i % 2 === 0 ? '' : 'second';
+        const second = i % 2 === 0 ? '' : ' second';
         let content = `
-        <section class="category ${second}">
+        <section class="category${second}">
             <div class="category-title" id="${category.id}">
                 <h2>${category.name}</h2>
             </div>
@@ -60,7 +60,7 @@ function genereContent() {
             }
 
             content += `
-            <div class="app  ${color}">
+            <div class="app ${color}">
                 <img src="${appData.icon}" alt="${appData.name}">
                 <h3>${appData.name}</h3>
             </div>
@@ -77,4 +77,8 @@ function genereContent() {
 // Attente que le document soit entièrement chargé pour assurer que tous les éléments sont accessibles.
 document.addEventListener('DOMContentLoaded', () => {
     genereContent();
+
+    document.getElementById('app-hidden').addEventListener('click', () => {
+        document.querySelectorAll('.app-hidden, .app-content').forEach(element => element.remove());
+    });
 });
