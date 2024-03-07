@@ -79,6 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
     genereContent();
 
     document.getElementById('app-hidden').addEventListener('click', () => {
-        document.querySelectorAll('.app-hidden, .app-content').forEach(element => element.remove());
+        document.querySelectorAll('.app-hidden, .app-content').forEach(element => element.classList.toggle('hidden'));
+    });
+
+    document.querySelectorAll('.app').forEach(app => {
+        document.querySelectorAll('.app-hidden, .app-content').forEach(content => {
+            app.addEventListener('click', () => {
+                content.classList.toggle('hidden');
+            });
+        });
     });
 });

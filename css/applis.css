@@ -135,3 +135,8 @@ section.category {
     align-items: start;
     gap: 1vh;
 }
+
+.app-hidden.hidden,
+ .app-content.hidden {
+    visibility: hidden;
+}
