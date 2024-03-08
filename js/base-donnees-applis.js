@@ -1,3 +1,22 @@
+let selectedAppColor;
+
+function getColor(notation) {
+    if (notation / 10 > .8) {
+        return 'green';
+    } else if (notation / 10 > .6) {
+        return 'yellow';
+    }
+    else if (notation / 10 > .4) {
+        return 'orange';
+    }
+    else if (notation / 10 > .2) {
+        return 'red';
+    }
+    else {
+        return 'purple';
+    }
+}
+
 function genereContent() {
     document.querySelectorAll('.category').forEach(element => element.remove());
 
@@ -27,14 +46,6 @@ function genereContent() {
             <div class="category-content">
         `;
 
-        let maxNotation = 0;
-        category.apps.forEach(app => {
-            const appData = apps.find(appData => appData.id === app);
-            if (appData.notation > maxNotation) {
-                maxNotation = appData.notation;
-            }
-        });
-
         // Trier les applications par notation décroissante
         category.apps.sort((a, b) => {
             const appAData = apps.find(appData => appData.id === a);
@@ -46,21 +57,8 @@ function genereContent() {
         category.apps.forEach(app => {
             const appData = apps.find(appData => appData.id === app);
 
-            let color = '';
-            if (appData.notation / maxNotation > .8) {
-                color = 'green';
-            } else if (appData.notation / maxNotation > .6) {
-                color = 'yellow';
-            } else if (appData.notation / maxNotation > .4) {
-                color = 'orange';
-            } else if (appData.notation / maxNotation > .2) {
-                color = 'red';
-            } else {
-                color = 'purple';
-            }
-
             content += `
-            <div class="app ${color}">
+            <div class="app ${getColor(appData.notation)}" id="${appData.id}">
                 <img src="${appData.icon}" alt="${appData.name}">
                 <h3>${appData.name}</h3>
             </div>
@@ -79,14 +77,27 @@ document.addEventListener('DOMContentLoaded', () => {
     genereContent();
 
     document.getElementById('app-hidden').addEventListener('click', () => {
-        document.querySelectorAll('.app-hidden, .app-content').forEach(element => element.classList.toggle('hidden'));
+        document.getElementById('app-hidden').classList.toggle('hidden');
+        document.getElementById('app-content').classList.toggle('hidden');
     });
-
+    
     document.querySelectorAll('.app').forEach(app => {
-        document.querySelectorAll('.app-hidden, .app-content').forEach(content => {
-            app.addEventListener('click', () => {
-                content.classList.toggle('hidden');
-            });
+        app.addEventListener('click', (event) => {
+            const appId = event.currentTarget.id;
+    
+            const appData = apps.find(appData => appData.id === appId);
+    
+            // Mettre à jour la variable selectedAppColor avec la couleur de l'application cliquée
+            selectedAppColor = getColor(appData.notation);
+    
+            document.getElementById('app-hidden').classList.toggle('hidden');
+            document.getElementById('app-content').classList.toggle('hidden');
+    
+            // Enlever toutes les classes de couleur de l'élément app-content
+            document.getElementById('app-content').classList.remove('green', 'yellow', 'orange', 'red', 'purple');
+    
+            // Ajouter la classe correspondant à la couleur de l'application à l'élément app-content
+            document.getElementById('app-content').classList.add(selectedAppColor);
         });
     });
 });
