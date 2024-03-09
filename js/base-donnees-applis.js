@@ -76,8 +76,8 @@ function genereContent() {
 document.addEventListener('DOMContentLoaded', () => {
     genereContent();
 
-    document.getElementById('app-hidden').addEventListener('click', () => {
-        document.getElementById('app-hidden').classList.toggle('hidden');
+    document.getElementById('app-visibility').addEventListener('click', () => {
+        document.getElementById('app-visibility').classList.toggle('hidden');
         document.getElementById('app-information').classList.toggle('hidden');
     });
     
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Mettre à jour la variable selectedAppColor avec la couleur de l'application cliquée
             selectedAppColor = getColor(appData.notation);
     
-            document.getElementById('app-hidden').classList.toggle('hidden');
+            document.getElementById('app-visibility').classList.toggle('hidden');
             document.getElementById('app-information').classList.toggle('hidden');
     
             // Enlever toutes les classes de couleur de l'élément app-information

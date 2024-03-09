@@ -64,3 +64,24 @@
     gap: 2.5rem;
     margin-top: 2.5rem;
 }
+
+
+
+/* BREAKPOINTS */
+@media all and (max-width: 991px) {
+    .cine-content {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .cine img {
+        max-width: 75%;
+        align-self: auto;
+    }
+    .cine-text {
+        align-items: center;
+        text-align: center;
+    }
+    .cine-text p {
+        text-align: center;
+    }
+}

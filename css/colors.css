@@ -11,6 +11,11 @@
     background-color: var(--green-main-color);
 }
 
+h3.green,
+p.green {
+    color: var(--green-text-color);
+}
+
 .content.blue {
     background: var(--blue-bg-color);
 }
@@ -22,6 +27,11 @@
 
 .content.blue img {
     background-color: var(--blue-main-color);
+}
+
+h3.blue,
+p.blue {
+    color: var(--blue-text-color);
 }
 
 .content.yellow {
@@ -37,6 +47,11 @@
     background-color: var(--yellow-main-color);
 }
 
+h3.yellow,
+p.yellow {
+    color: var(--yellow-text-color);
+}
+
 .content.orange {
     background: var(--orange-bg-color);
 }
@@ -48,6 +63,11 @@
 
 .content.orange img {
     background-color: var(--orange-main-color);
+}
+
+h3.orange,
+p.orange {
+    color: var(--orange-text-color);
 }
 
 .content.red {
@@ -63,6 +83,11 @@
     background-color: var(--red-main-color);
 }
 
+h3.red,
+p.red {
+    color: var(--red-text-color);
+}
+
 .content.purple {
     background: var(--purple-bg-color);
 }
@@ -74,4 +99,9 @@
 
 .content.purple img {
     background-color: var(--purple-main-color);
+}
+
+h3.purple,
+p.purple {
+    color: var(--purple-text-color);
 }

@@ -42,3 +42,37 @@ section {
 section.second {
     background: var(--second-bg-color);
 }
+
+/* BREAKPOINTS */
+@media all and (max-width: 1200px) {
+    html {
+        font-size: 55%
+    }
+}
+
+@media all and (max-width: 991px) {
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+}
+
+@media all and (max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media all and (max-width: 462px) {
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
