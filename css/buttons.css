@@ -1,0 +1,29 @@
+.button {
+    align-self: stretch;
+    margin-top: 2.5rem;
+    padding: 1.25rem 2.5rem;
+    text-align: center;
+
+    background: var(--second-bg-color);
+    color: var(--second-text-color);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 0.625rem;
+}
+
+.button.second {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.button:hover {
+    background: var(--second-text-color);
+    color: var(--second-bg-color);
+}
+
+.button.second:hover {
+    background: var(--second-main-color);
+    color: var(--second-bg-color);
+}

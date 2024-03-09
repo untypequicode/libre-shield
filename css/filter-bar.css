@@ -27,15 +27,11 @@
     font-weight: 700;
     line-height: normal;
     border-radius: 6.25rem;
-    transition: .3s;
+    /* transition: .3s; */
 }
 
-.filter-option:hover {
-    background: var(--second-main-color);
-    color: var(--second-bg-color);
-}
-
+.filter-option:hover,
 .filter-option.active {
-    background: var(--main-color);
-    color: var(--bg-color);
+    background: var(--second-bg-color);
+    color: var(--second-text-color);
 }

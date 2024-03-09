@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background: transparent;
+    /* background: transparent; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,9 +13,9 @@
     background: var(--bg-color);
 }
 
-.header.sticky {
+/* .header.sticky {
     background: var(--bg-color);
-}
+} */
 
 .logo {
     position: relative;
@@ -43,7 +43,7 @@
     color: var(--text-color);
 }
 
-.navbar .switch-mode {
+.switch-mode {
     fill: var(--text-color);
 
     width: 3.125rem;

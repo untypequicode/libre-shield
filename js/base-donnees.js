@@ -35,7 +35,7 @@ function genererTexte(contenu, prefixeClasse, styleClasse, classeAlternee) {
     resume += `<p>${contenu.description}</p>`;
     resume += `<div class="${prefixeClasse}${contenu.liensClasse} ${styleClasse}">`;
     contenu.liens.forEach(lien => {
-        resume += `<a class="${prefixeClasse}${lien.classe} ${styleClasse}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
+        resume += `<a class="button ${prefixeClasse}${lien.classe} ${styleClasse}" href="${lien.href}" target="${lien.target}">${lien.texte}</a>`;
     });
     resume += `</div></div>`; // Fermeture des divs de texte et de liens
 

@@ -58,7 +58,7 @@ function genereContent() {
             const appData = apps.find(appData => appData.id === app);
 
             content += `
-            <div class="app ${getColor(appData.notation)}" id="${appData.id}">
+            <div class="content app ${getColor(appData.notation)}" id="${appData.id}">
                 <img src="${appData.icon}" alt="${appData.name}">
                 <h3>${appData.name}</h3>
             </div>
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('app-hidden').addEventListener('click', () => {
         document.getElementById('app-hidden').classList.toggle('hidden');
-        document.getElementById('app-content').classList.toggle('hidden');
+        document.getElementById('app-information').classList.toggle('hidden');
     });
     
     document.querySelectorAll('.app').forEach(app => {
@@ -91,13 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
             selectedAppColor = getColor(appData.notation);
     
             document.getElementById('app-hidden').classList.toggle('hidden');
-            document.getElementById('app-content').classList.toggle('hidden');
+            document.getElementById('app-information').classList.toggle('hidden');
     
-            // Enlever toutes les classes de couleur de l'élément app-content
-            document.getElementById('app-content').classList.remove('green', 'yellow', 'orange', 'red', 'purple');
+            // Enlever toutes les classes de couleur de l'élément app-information
+            document.getElementById('app-information').classList.remove('green', 'yellow', 'orange', 'red', 'purple');
     
-            // Ajouter la classe correspondant à la couleur de l'application à l'élément app-content
-            document.getElementById('app-content').classList.add(selectedAppColor);
+            // Ajouter la classe correspondant à la couleur de l'application à l'élément app-information
+            document.getElementById('app-information').classList.add(selectedAppColor);
         });
     });
 });

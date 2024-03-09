@@ -1,5 +1,6 @@
 @import "main.css";
 @import "blob.css";
+@import "colors.css";
 
 
 section.category {
@@ -30,7 +31,7 @@ section.category {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10vh;
-    /* padding: 0 10vh; */
+    padding: 0 10vh 0 10vh;
 }
 
 .app {
@@ -61,71 +62,6 @@ section.category {
     line-height: normal;
 }
 
-.app.green,
-#app-content.green,
-.app-title.green,
-#app-content.green p {
-    background: var(--green-bg-color);
-    color: var(--green-text-color);
-}
-
-.app.green img
-,.app-logo.green {
-    background-color: var(--green-main-color);
-}
-
-.app.yellow,
-#app-content.yellow,
-.app-title.yellow,
-#app-content.yellow p{
-    background: var(--yellow-bg-color);
-    color: var(--yellow-text-color);
-}
-
-.app.yellow img,
-.app-logo.yellow {
-    background-color: var(--yellow-main-color);
-}
-
-.app.orange,
-#app-content.orange,
-.app-title.orange,
-#app-content.orange p{
-    background: var(--orange-bg-color);
-    color: var(--orange-text-color);
-}
-
-.app.orange img,
-.app-logo.orange {
-    background-color: var(--orange-main-color);
-}
-
-.app.red,
-#app-content.red,
-.app-title.red,
-#app-content.red p{
-    background: var(--red-bg-color);
-    color: var(--red-text-color);
-}
-
-.app.red img,
-.app-logo.red {
-    background-color: var(--red-main-color);
-}
-
-.app.purple,
-#app-content.purple,
-.app-title.purple,
-#app-content.purple p{
-    background: var(--purple-bg-color);
-    color: var(--purple-text-color);
-}
-
-.app.purple img,
-.app-logo.purple {
-    background-color: var(--purple-main-color);
-}
-
 #app-hidden {
     position: fixed;
     top: 0;
@@ -135,7 +71,7 @@ section.category {
     z-index: 101;
 }
 
-#app-content {
+#app-information {
     position: fixed;
     top: 10vh;
     left: 5vh;
@@ -153,18 +89,18 @@ section.category {
 }
 
 #app-hidden.hidden,
-#app-content.hidden {
+#app-information.hidden {
     visibility: hidden;
 }
 
-.app-logo {
+#app-logo {
     width: 35vh;
     height: 35vh;
     border-radius: 3.75vh;
     padding: 1.5vh;
 }
 
-.app-primary {
+#app-primary {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -172,7 +108,7 @@ section.category {
     gap: 5rem;
 }
 
-.app-secondary {
+#app-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,7 +116,7 @@ section.category {
     gap: 5rem;
 }
 
-.app-features {
+#app-features {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -188,7 +124,7 @@ section.category {
     gap: 5rem;
 }
 
-.app-links {
+#app-links {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,7 +145,7 @@ section.category {
     border-radius: 0.625rem;
 }
 
-.app-title {
+#app-title {
     color: var(--text-color);
     font-size: 3rem;
     font-style: normal;
