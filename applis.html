@@ -25,22 +25,51 @@
 
 <body>
 
-<header class="header">
-    <a href="https://untypequicode.github.io/libre-shield" class="logo">Libre Shield. <span class="animate" style="--i:1;"></span></a>
+    <header class="header">
+        <a href="https://untypequicode.github.io/libre-shield" class="logo">Libre Shield. <span class="animate" style="--i:1;"></span></a>
+    
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+    
+        <nav class="navbar">
+            <a href="https://untypequicode.github.io/libre-shield">Accueil</a>
+            <a href="conseils">Conseils</a>
+            <a href="cinema-series">Ciné / Séries</a>
+            <a href="applis" class="active">Applis</a>
+            <a href="habitudes">Habitudes</a>
+            <a href="qui-sommes-nous">Qui sommes-nous ?</a>
+    
+            <img src="images/sun.svg" class="switch-mode"id ="switch-mode" alt="switch-mode">
+    
+            <!-- box icon -->
+            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        </nav>
+    </header>
 
-    <nav class="navbar">
-        <a href="https://untypequicode.github.io/libre-shield">Accueil</a>
-        <a href="conseils">Conseils</a>
-        <a href="cinema-series">Ciné / Séries</a>
-        <a href="applis" class="active">Applis</a>
-        <a href="habitudes">Habitudes</a>
-        <a href="qui-sommes-nous">Qui sommes-nous ?</a>
+<div class="hidden" id="app-visibility"></div>
 
-        <img src="images/sun.svg" class="switch-mode" id="switch-mode" alt="switch-mode">
+<div class="content green hidden" id="app-information">
+    <div id="app-primary">
+        <img src="images/apps/brave.svg" alt="" id="app-logo">
+        <div id="app-text">
+            <h3 class="green" id="app-title">Brave</h3>
+            <div id="app-links">
+                <a href="" target="_blank" class="button green">Site officiel</a>
+                <a href="" target="_blank" class="button green">Site officiel</a>
+            </div>
+            <p id="app-description">Brave est un navigateur web open source
+                qui se veut plus rapide et plus sécurisé que les autres navigateurs.
+                Il est basé sur Chromium et est compatible avec les extensions de Chrome.
+                Il est également doté d'un bloqueur de publicités et de traqueurs intégré.</p>
+        </div>
+    </div>
+    <div id="app-features">
+        <p class="app-feature" id="app-positive">+ Bloqueur de publicités et de traqueurs intégré</p>
+        <p class="app-feature" id="app-negative">- Basé sur Chromium</p>
+    </div>
+</div>
 
-    </nav>
-</header>
 
+<script src="js/header.js"></script>
 <script src="js/applis.js"></script>
 <script src="js/base-donnees-applis.js"></script>
 <script src="js/switch-mode.js"></script>

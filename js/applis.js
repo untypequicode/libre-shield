@@ -55,7 +55,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://www.mozilla.org/fr/firefox/new/" }
         ],
-        notation: 5
+        notation: 9
     },
     {
         id: "brave",
@@ -65,7 +65,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://brave.com/" }
         ],
-        notation: 4
+        notation: 8
     },
     {
         id: "edge",
@@ -95,7 +95,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://telegram.org/" }
         ],
-        notation: 5
+        notation: 8
     },
     {
         id: "signal",
@@ -105,7 +105,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://signal.org/" }
         ],
-        notation: 5
+        notation: 9
     },
     {
         id: "gdrive",
@@ -115,7 +115,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://www.google.com/drive/" }
         ],
-        notation: 3
+        notation: 1
     },
     {
         id: "mega",
@@ -125,7 +125,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://mega.nz/" }
         ],
-        notation: 4
+        notation: 9
     },
     {
         id: "kdrive",
@@ -135,7 +135,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://www.infomaniak.com/fr/kdrive" }
         ],
-        notation: 5
+        notation: 7
     },
     {
         id: "gmail",
@@ -145,7 +145,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://mail.google.com/" }
         ],
-        notation: 3
+        notation: 1
     },
     {
         id: "protonmail",
@@ -155,7 +155,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://protonmail.com/" }
         ],
-        notation: 5
+        notation: 9
     },
     {
         id: "infomaniak",
@@ -175,7 +175,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://tutanota.com/" }
         ],
-        notation: 5
+        notation: 8
     },
     {
         id: "windows",
@@ -195,7 +195,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://pop.system76.com/" }
         ],
-        notation: 5
+        notation: 8
     },
     {
         id: "ubuntu",
@@ -205,7 +205,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://ubuntu.com/" }
         ],
-        notation: 5
+        notation: 8
     },
     {
         id: "photoshop",
@@ -215,7 +215,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://www.adobe.com/fr/products/photoshop.html" }
         ],
-        notation: 1
+        notation: 2
     },
     {
         id: "gimp",
@@ -225,7 +225,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://www.gimp.org/" }
         ],
-        notation: 5
+        notation: 7
     },
     {
         id: "vscode",
@@ -235,7 +235,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://code.visualstudio.com/" }
         ],
-        notation: 5
+        notation: 3
     },
     {
         id: "vscodium",
@@ -245,6 +245,6 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://vscodium.com/" }
         ],
-        notation: 5
+        notation: 9
     }
 ]

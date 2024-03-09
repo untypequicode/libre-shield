@@ -1,0 +1,88 @@
+.button {
+    align-self: stretch;
+    padding: 1.25rem 2.5rem;
+    text-align: center;
+
+    background: var(--second-bg-color);
+    color: var(--second-text-color);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 0.625rem;
+}
+
+.button.second {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.button:hover {
+    background: var(--second-text-color);
+    color: var(--second-bg-color);
+}
+
+.button.second:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.button.green {
+    background: var(--green-main-color);
+    color: var(--green-text-color);
+}
+
+.button.green:hover {
+    background: var(--green-text-color);
+    color: var(--green-main-color);
+}
+
+.button.red {
+    background: var(--red-main-color);
+    color: var(--red-text-color);
+}
+
+.button.red:hover {
+    background: var(--red-text-color);
+    color: var(--red-main-color);
+}
+
+.button.blue {
+    background: var(--blue-main-color);
+    color: var(--blue-text-color);
+}
+
+.button.blue:hover {
+    background: var(--blue-text-color);
+    color: var(--blue-main-color);
+}
+
+.button.yellow {
+    background: var(--yellow-main-color);
+    color: var(--yellow-text-color);
+}
+
+.button.yellow:hover {
+    background: var(--yellow-text-color);
+    color: var(--yellow-main-color);
+}
+
+.button.orange {
+    background: var(--orange-main-color);
+    color: var(--orange-text-color);
+}
+
+.button.orange:hover {
+    background: var(--orange-text-color);
+    color: var(--orange-main-color);
+}
+
+.button.purple {
+    background: var(--purple-main-color);
+    color: var(--purple-text-color);
+}
+
+.button.purple:hover {
+    background: var(--purple-text-color);
+    color: var(--purple-main-color);
+}

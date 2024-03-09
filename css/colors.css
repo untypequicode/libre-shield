@@ -1,0 +1,107 @@
+.content.green {
+    background: var(--green-bg-color);
+}
+
+.content.green h3,
+.content.green p {
+    color: var(--green-text-color);
+}
+
+.content.green img {
+    background-color: var(--green-main-color);
+}
+
+h3.green,
+p.green {
+    color: var(--green-text-color);
+}
+
+.content.blue {
+    background: var(--blue-bg-color);
+}
+
+.content.blue h3,
+.content.blue p {
+    color: var(--blue-text-color);
+}
+
+.content.blue img {
+    background-color: var(--blue-main-color);
+}
+
+h3.blue,
+p.blue {
+    color: var(--blue-text-color);
+}
+
+.content.yellow {
+    background: var(--yellow-bg-color);
+}
+
+.content.yellow h3,
+.content.yellow p {
+    color: var(--yellow-text-color);
+}
+
+.content.yellow img {
+    background-color: var(--yellow-main-color);
+}
+
+h3.yellow,
+p.yellow {
+    color: var(--yellow-text-color);
+}
+
+.content.orange {
+    background: var(--orange-bg-color);
+}
+
+.content.orange h3,
+.content.orange p {
+    color: var(--orange-text-color);
+}
+
+.content.orange img {
+    background-color: var(--orange-main-color);
+}
+
+h3.orange,
+p.orange {
+    color: var(--orange-text-color);
+}
+
+.content.red {
+    background: var(--red-bg-color);
+}
+
+.content.red h3,
+.content.red p {
+    color: var(--red-text-color);
+}
+
+.content.red img {
+    background-color: var(--red-main-color);
+}
+
+h3.red,
+p.red {
+    color: var(--red-text-color);
+}
+
+.content.purple {
+    background: var(--purple-bg-color);
+}
+
+.content.purple h3,
+.content.purple p {
+    color: var(--purple-text-color);
+}
+
+.content.purple img {
+    background-color: var(--purple-main-color);
+}
+
+h3.purple,
+p.purple {
+    color: var(--purple-text-color);
+}

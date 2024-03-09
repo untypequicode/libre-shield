@@ -1,12 +1,12 @@
 @import "main.css";
 @import "blob.css";
+@import "colors.css";
+@import "buttons.css";
 
 
 section.category {
     height: auto;
-    /* justify-content: start; */
     gap: 10vh;
-    /* padding: 20vh 0 10vh 0; */
     padding: 20vh 0 20vh 0;
     flex-wrap: nowrap;
 }
@@ -30,7 +30,7 @@ section.category {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10vh;
-    /* padding: 0 10vh; */
+    padding: 0 10vh 0 10vh;
 }
 
 .app {
@@ -39,9 +39,10 @@ section.category {
     border-radius: 5vh;
     display: flex;
     flex-direction: row;
+    /* flex: 1 0 0; */
     align-items: center;
     justify-content: start;
-    gap: 5vh;
+    gap: 2.5vh;
     padding: 2.5vh;
     flex-wrap: nowrap;
 }
@@ -61,47 +62,149 @@ section.category {
     line-height: normal;
 }
 
-.app.green {
-    background: var(--green-bg-color);
-    color: var(--green-text-color);
+
+
+#app-visibility.hidden,
+#app-information.hidden {
+    visibility: hidden;
 }
 
-.app.green img {
-    background-color: var(--green-main-color);
+#app-visibility {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
 }
 
-.app.yellow {
-    background: var(--yellow-bg-color);
-    color: var(--yellow-text-color);
+#app-information {
+    position: fixed;
+    top: 10vh;
+    left: 5vh;
+    right: 5vh;
+    bottom: 5vh;
+    z-index: 102;
+    border-radius: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 5vh;
+    padding: 5vh;
 }
 
-.app.yellow img {
-    background-color: var(--yellow-main-color);
+#app-logo {
+    width: 35vh;
+    height: auto;
+    border-radius: 3.75vh;
+    padding: 1.5vh;
 }
 
-.app.orange {
-    background: var(--orange-bg-color);
-    color: var(--orange-text-color);
+#app-primary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
 }
 
-.app.orange img {
-    background-color: var(--orange-main-color);
+#app-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2.5rem;
 }
 
-.app.red {
-    background: var(--red-bg-color);
-    color: var(--red-text-color);
+#app-features {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
 }
 
-.app.red img {
-    background-color: var(--red-main-color);
+.app-feature {
+    flex: 1 0 0;
 }
 
-.app.purple {
-    background: var(--purple-bg-color);
-    color: var(--purple-text-color);
+#app-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
 }
 
-.app.purple img {
-    background-color: var(--purple-main-color);
+#app-title {
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#app-information p {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* BREAKPOINTS */
+
+@media all and (max-width: 1500px) {
+    .category-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* #app-logo {
+        width: 30vh;
+    } */
+}
+
+@media all and (max-width: 1200px) {
+    #app-features {
+        flex-direction: column;
+        align-items: start;
+    }
+    #app-logo {
+        width: 25vh;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .category-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #app-logo {
+        max-width: 25vh;
+        width: 100%;
+    }
+    #app-information {
+        gap: 2.5vh;
+    }
+    #app-information p {
+        font-size: 1.5rem;
+    }
+    #app-title {
+        font-size: 3rem;
+    }
+    #app-primary {
+        flex-direction: column;
+        gap: 2.5vh;
+    }
+    #app-text {
+        align-items: center;
+    }
+    #app-description {
+        text-align: center;
+    }
+    #app-features {
+        align-items: center;
+        gap: 2.5vh;
+    }
+    .app-feature {
+        text-align: center;
+    }
 }
