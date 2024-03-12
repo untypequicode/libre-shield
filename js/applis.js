@@ -47,8 +47,7 @@ const apps = [
         ],
         notation: 1,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+            
         ]
     },
     {
@@ -61,8 +60,7 @@ const apps = [
         ],
         notation: 9,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -75,8 +73,8 @@ const apps = [
         ],
         notation: 8,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+            { name: "positive", content: "+ Bloqueur de publicités et de traqueurs intégré"},
+            { name: "negative", content: "- Basé sur Chromium"}
         ]
     },
     {
@@ -89,8 +87,7 @@ const apps = [
         ],
         notation: 1,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -103,8 +100,7 @@ const apps = [
         ],
         notation: 3,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -117,8 +113,7 @@ const apps = [
         ],
         notation: 8,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -131,8 +126,7 @@ const apps = [
         ],
         notation: 9,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -145,8 +139,7 @@ const apps = [
         ],
         notation: 1,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -159,8 +152,7 @@ const apps = [
         ],
         notation: 9,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -173,8 +165,7 @@ const apps = [
         ],
         notation: 7,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -187,8 +178,7 @@ const apps = [
         ],
         notation: 1,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -201,8 +191,7 @@ const apps = [
         ],
         notation: 9,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -215,8 +204,7 @@ const apps = [
         ],
         notation: 4,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -229,8 +217,7 @@ const apps = [
         ],
         notation: 8,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+        
         ]
     },
     {
@@ -243,8 +230,7 @@ const apps = [
         ],
         notation: 1,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -257,8 +243,7 @@ const apps = [
         ],
         notation: 8,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -271,8 +256,7 @@ const apps = [
         ],
         notation: 8,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -285,8 +269,7 @@ const apps = [
         ],
         notation: 2,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -299,8 +282,7 @@ const apps = [
         ],
         notation: 7,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -313,8 +295,7 @@ const apps = [
         ],
         notation: 3,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     },
     {
@@ -327,8 +308,7 @@ const apps = [
         ],
         notation: 9,
         features: [
-            { name: "positive", content: "positif"},
-            { name: "negative", content: "negatif"}
+
         ]
     }
 ]

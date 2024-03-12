@@ -76,6 +76,8 @@ function genereContent() {
 document.addEventListener('DOMContentLoaded', () => {
     genereContent();
 
+    // document.body.style.overflow = 'hidden';
+
     document.getElementById('app-visibility').addEventListener('click', () => {
         document.getElementById('app-visibility').classList.toggle('hidden');
         document.getElementById('app-information').classList.toggle('hidden');
