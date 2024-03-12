@@ -76,6 +76,8 @@ function genereContent() {
 document.addEventListener('DOMContentLoaded', () => {
     genereContent();
 
+    // document.body.style.overflow = 'hidden';
+
     document.getElementById('app-visibility').addEventListener('click', () => {
         document.getElementById('app-visibility').classList.toggle('hidden');
         document.getElementById('app-information').classList.toggle('hidden');
@@ -98,6 +100,34 @@ document.addEventListener('DOMContentLoaded', () => {
     
             // Ajouter la classe correspondant à la couleur de l'application à l'élément app-information
             document.getElementById('app-information').classList.add(selectedAppColor);
+
+            document.getElementById('app-links').querySelectorAll('.button').forEach(button => {
+                button.remove()
+            });
+
+            document.getElementById('app-features').querySelectorAll('.app-feature').forEach(features => {
+                features.remove()
+            });
+
+            document.getElementById('app-logo').src = appData.icon;
+            document.getElementById('app-title').innerHTML = appData.name;
+            document.getElementById('app-description').innerHTML = appData.description;
+
+            appData.liens.forEach(lien => {
+                const button = document.createElement('a');
+                button.href = lien.url;
+                button.target = "_blank";
+                button.classList.add('button', selectedAppColor);
+                button.innerHTML = lien.name;
+                document.getElementById('app-links').appendChild(button);
+            });
+
+            appData.features.forEach(feature => {
+                const featureElement = document.createElement('p');
+                featureElement.classList.add(feature.name, 'app-feature');
+                featureElement.innerHTML = feature.content;
+                document.getElementById('app-features').appendChild(featureElement);
+            });
         });
     });
 });
