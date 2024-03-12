@@ -93,6 +93,8 @@ section.category {
     align-items: start;
     gap: 5vh;
     padding: 5vh;
+
+    transition: none;
 }
 
 #app-logo {
@@ -100,6 +102,8 @@ section.category {
     height: auto;
     border-radius: 3.75vh;
     padding: 1.5vh;
+
+    transition: none;
 }
 
 #app-primary {

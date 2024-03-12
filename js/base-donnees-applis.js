@@ -120,7 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('app-links').appendChild(button);
             });
 
-            
+            appData.features.forEach(feature => {
+                const featureElement = document.createElement('p');
+                featureElement.classList.add(feature.name, 'app-feature');
+                featureElement.innerHTML = feature.content;
+                document.getElementById('app-features').appendChild(featureElement);
+            });
         });
     });
 });
