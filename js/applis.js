@@ -65,7 +65,11 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://brave.com/" }
         ],
-        notation: 8
+        notation: 8,
+        features: [
+            { name: "positive", content: "positif"},
+            { name: "negative", content: "negatif"}
+        ]
     },
     {
         id: "edge",

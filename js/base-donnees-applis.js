@@ -98,6 +98,29 @@ document.addEventListener('DOMContentLoaded', () => {
     
             // Ajouter la classe correspondant à la couleur de l'application à l'élément app-information
             document.getElementById('app-information').classList.add(selectedAppColor);
+
+            document.getElementById('app-links').querySelectorAll('.button').forEach(button => {
+                button.remove()
+            });
+
+            document.getElementById('app-features').querySelectorAll('.app-feature').forEach(features => {
+                features.remove()
+            });
+
+            document.getElementById('app-logo').src = appData.icon;
+            document.getElementById('app-title').innerHTML = appData.name;
+            document.getElementById('app-description').innerHTML = appData.description;
+
+            appData.liens.forEach(lien => {
+                const button = document.createElement('a');
+                button.href = lien.url;
+                button.target = "_blank";
+                button.classList.add('button', selectedAppColor);
+                button.innerHTML = lien.name;
+                document.getElementById('app-links').appendChild(button);
+            });
+
+            
         });
     });
 });
