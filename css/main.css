@@ -9,3 +9,7 @@
 body::-webkit-scrollbar {
     display: none;
 }
+
+section.second {
+    background: var(--second-bg-color);
+}
