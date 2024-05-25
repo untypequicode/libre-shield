@@ -71,7 +71,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://brave.com/" }
         ],
-        notation: 8,
+        notation: 9,
         features: [
             { name: "positive", content: "+ Bloqueur de publicités et de traqueurs intégré"},
             { name: "negative", content: "- Basé sur Chromium"}
@@ -163,7 +163,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://www.infomaniak.com/fr/kdrive" }
         ],
-        notation: 7,
+        notation: 8,
         features: [
 
         ]
@@ -189,7 +189,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://protonmail.com/" }
         ],
-        notation: 9,
+        notation: 8,
         features: [
 
         ]
@@ -202,7 +202,7 @@ const apps = [
         liens: [
             { name: "Site officiel", url: "https://www.infomaniak.com/fr/mail" }
         ],
-        notation: 4,
+        notation: 9,
         features: [
 
         ]

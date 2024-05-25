@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Ajouter la classe correspondant à la couleur de l'application à l'élément app-information
             document.getElementById('app-information').classList.add(selectedAppColor);
 
-            document.getElementById('app-links').querySelectorAll('.button').forEach(button => {
+            document.getElementById('app-links').querySelectorAll('.btn-c').forEach(button => {
                 button.remove()
             });
 
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const button = document.createElement('a');
                 button.href = lien.url;
                 button.target = "_blank";
-                button.classList.add('button', selectedAppColor);
+                button.classList.add('btn-c', selectedAppColor);
                 button.innerHTML = lien.name;
                 document.getElementById('app-links').appendChild(button);
             });
