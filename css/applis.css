@@ -45,6 +45,7 @@ section.category {
     gap: 2.5vh;
     padding: 2.5vh;
     flex-wrap: nowrap;
+    cursor: pointer;
 }
 
 
