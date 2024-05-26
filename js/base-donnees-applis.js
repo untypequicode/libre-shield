@@ -67,7 +67,8 @@ function genereContent() {
 
         content += `</div>
         </section>`;
-        document.body.insertAdjacentHTML('beforeend', content);
+        const footer = document.querySelector('.footer');
+        footer.insertAdjacentHTML('beforebegin', content);
         i++;
     });
 }
