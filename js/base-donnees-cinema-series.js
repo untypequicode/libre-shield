@@ -16,7 +16,8 @@ function filterContent(type) {
     contenu1.forEach(contenu => {
         const classeAlternee = i % 2 === 0 ? 'left' : 'right';
         const styleAlterne = i % 2 === 0 ? '' : 'second';
-        document.body.insertAdjacentHTML('beforeend', genererTexte(contenu, "", styleAlterne, classeAlternee));
+        const footer = document.querySelector('.footer');
+        footer.insertAdjacentHTML('beforebegin', genererTexte(contenu, "", styleAlterne, classeAlternee));
 
         i++;
     });
