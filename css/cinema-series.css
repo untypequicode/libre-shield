@@ -1,61 +1,7 @@
 @import "main.css";
 @import "blob.css";
 @import "buttons.css";
-
-.cine-content {
-    display: flex;
-    height: 33.75rem;
-    justify-content: center;
-    align-items: center;
-    gap: 12rem;
-}
-
-.cine img {
-    flex: 1 0 0;
-    align-self: stretch;
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-
-    animation: blob-2 40s infinite;
-}
-
-.cine-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 0.675rem;
-    flex: 1 0 0;
-    align-self: stretch;
-}
-
-.cine-text h1 {
-    color: var(--text-color);
-    font-size: 5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.cine-text.second h1 {
-    color: var(--second-text-color);
-}
-
-.cine-text p {
-    align-self: stretch;
-
-    color: var(--second-text-color);
-    text-align: justify;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.cine-text.second p {
-    color: var(--text-color);
-}
+@import "filter-bar.css";
 
 .cine-links {
     display: flex;
@@ -65,23 +11,12 @@
     margin-top: 2.5rem;
 }
 
+.s-bg-s .section-content {
+    flex-direction: row-reverse;
+}
 
-
-/* BREAKPOINTS */
-@media all and (max-width: 991px) {
-    .cine-content {
+@media all and (max-width: 768px) {
+    .s-bg-s .section-content{
         flex-direction: column;
-        justify-content: center;
-    }
-    .cine img {
-        max-width: 75%;
-        align-self: auto;
-    }
-    .cine-text {
-        align-items: center;
-        text-align: center;
-    }
-    .cine-text p {
-        text-align: center;
     }
 }

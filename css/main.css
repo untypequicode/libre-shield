@@ -10,6 +10,42 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-section.second {
-    background: var(--second-bg-color);
+.section-content {
+    gap: 12rem;
+}
+
+.section-img {
+    width: 50%;
+    height: 33.75rem;
+    object-fit: cover;
+
+    animation: blob-1 40s infinite;
+}
+
+.section-text {
+    width: 50%;
+    align-items: flex-start;
+}
+
+.section-text p {
+    text-align: justify;
+    color: var(--second-text-color);
+}
+
+.s-bg-s .section-text p {
+    color: var(--text-color);
+}
+
+/* BREAKPOINTS */
+@media all and (max-width: 850px) {
+    .section-img {
+        width: 75%;
+    }
+    .section-text {
+        width: 100%;
+        align-items: center;
+    }
+    .section-text p {
+        text-align: center;
+    }
 }
