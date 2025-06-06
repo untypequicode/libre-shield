@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- OpenGraph-->
-        <title>Libre Shield | Applis</title>
+        <title>Libre Shield | Cinéma</title>
         <meta
             name="description"
             content="Ici, je partage mes astuces et découvertes pour une vie numérique plus sécurisée. Suivez mon aventure avec LibreShield, des conseils pratiques et des solutions open source."
@@ -29,35 +29,28 @@
         <link rel="icon" type="image/png" href="images/favicon.svg" />
 
         <!-- font awesome -->
-        <link rel="stylesheet" href="css/applis.css" />
-        <link rel="stylesheet" href="css/filter-bar.css" />
+        <link rel="stylesheet" href="css/cinema-series.css" />
     </head>
 
-    <body data-active="Applis">
+    <body data-active="Ciné / Séries">
         <header class="header"></header>
 
-        <div class="hidden" id="app-visibility"></div>
-
-        <div class="content hidden" id="app-information">
-            <div id="app-primary">
-                <img src="" alt="" id="app-logo" />
-                <div id="app-text">
-                    <h3 class="" id="app-title"></h3>
-                    <div id="app-links"></div>
-                    <p id="app-description"></p>
-                </div>
-            </div>
-            <div id="app-features"></div>
-        </div>
+        <nav class="filter-bar" id="filter-bar-cinema-series">
+            <button class="filter-option active" id="show-all">Tout</button>
+            <button class="filter-option" id="show-film">Films</button>
+            <button class="filter-option" id="show-serie">Séries</button>
+            <button class="filter-option" id="show-youtube">YouTube</button>
+        </nav>
 
         <footer class="footer"></footer>
 
         <script src="js/db-header.js"></script>
-        <script src="https://script-js.untypequicode.fr/js/header.js"></script>
+        <script src="https://script.js.www.untypequicode.fr/js/header.js"></script>
         <script src="js/db-footer.js"></script>
-        <script src="https://script-js.untypequicode.fr/js/footer.js"></script>
-        <script src="https://script-js.untypequicode.fr/js/switch-mode.js"></script>
-        <script src="js/applis.js"></script>
-        <script src="js/base-donnees-applis.js"></script>
+        <script src="https://script.js.www.untypequicode.fr/js/footer.js"></script>
+        <script src="https://script.js.www.untypequicode.fr/js/switch-mode.js"></script>
+        <script src="js/db-cinema-series.js"></script>
+        <script src="js/base-donnees.js"></script>
+        <script src="js/cinema-series.js"></script>
     </body>
 </html>
